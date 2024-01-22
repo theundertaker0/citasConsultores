@@ -11,13 +11,13 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " href="./examples/maps.html">
-        <i class="fas fa-stethoscope text-info"></i> Médicos
+      <a class="nav-link " href="{{'/docentes'}}">
+        <i class="fas fa-chalkboard-teacher text-info"></i> Docentes
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " href="./examples/profile.html">
-        <i class="fas fa-bed text-warning"></i> Pacientes
+      <a class="nav-link " href="/alumnos">
+        <i class="fas fa-graduation-cap text-warning"></i> Alumnos
       </a>
     </li>
     <li class="nav-item">

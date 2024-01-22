@@ -26,3 +26,11 @@ Route::get('/especialidades', [App\Http\Controllers\SpecialtyController::class, 
 Route::get('/especialidades/create', [App\Http\Controllers\SpecialtyController::class, 'create']);
 Route::get('/especialidades/{specialty}/edit', [App\Http\Controllers\SpecialtyController::class, 'edit']);
 Route::post('/especialidades', [App\Http\Controllers\SpecialtyController::class, 'sendData']);
+Route::put('/especialidades/{specialty}', [App\Http\Controllers\SpecialtyController::class, 'update']);
+Route::delete('/especialidades/{specialty}', [App\Http\Controllers\SpecialtyController::class, 'destroy']);
+
+//Rutas Docentes
+Route::resource('/docentes', 'App\Http\Controllers\TeacherController');
+
+//Rutas Alumnos
+Route::resource('/alumnos', 'App\Http\Controllers\StudentController');

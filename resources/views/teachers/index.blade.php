@@ -7,10 +7,10 @@
         <div class="card-header border-0">
           <div class="row align-items-center">
             <div class="col">
-              <h3 class="mb-0">Especialidades</h3>
+              <h3 class="mb-0">Docentes</h3>
             </div>
             <div class="col text-right">
-              <a href="{{url('/especialidades/create')}}" class="btn btn-sm btn-primary">Nueva Especialidad</a>
+              <a href="{{url('/docentes/create')}}" class="btn btn-sm btn-primary">Nuevo Docente</a>
             </div>
           </div>
         </div>
@@ -27,24 +27,28 @@
             <thead class="thead-light">
               <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Descripción</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Especialidad</th>
                 <th scope="col">Opciones</th>
               </tr>
             </thead>
             <tbody>
-                @foreach($specialties as $specialty)
+                @foreach($teachers as $teacher)
                     <tr>
                         <th scope="row">
-                            {{$specialty->name}}
+                            {{$teacher->name}}
                         </th>
                         <td>
-                            {{$specialty->description}}
+                            {{$teacher->email}}
                         </td>
                         <td>
-                        <form action="{{url('/especialidades/'.$specialty->id)}}" method="post">
+                            {{$teacher->title}}
+                        </td>
+                        <td>
+                        <form action="{{url('/docentes/'.$teacher->id)}}" method="post">
                             @csrf
                             @method('DELETE')
-                            <a href="{{url('/especialidades/'.$specialty->id.'/edit')}}" class="btn btn-sm btn-primary">Editar</a>
+                            <a href="{{url('/docentes/'.$teacher->id.'/edit')}}" class="btn btn-sm btn-primary">Editar</a>
                             <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
                         </form>
 
@@ -58,4 +62,3 @@
     </div>
   </div>
 @endsection
-

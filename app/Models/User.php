@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'title',
+        'address',
+        'phone',
+        'role'
     ];
 
     /**
@@ -42,4 +46,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function scopeStudents($query){
+        return $query->where('role', 'alumno');
+    }
+
+    public function scopeTeachers($query){
+        return $query->where('role', 'docente');
+    }
 }
